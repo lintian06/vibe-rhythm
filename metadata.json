@@ -1,0 +1,7 @@
+{
+  "name": "VibeRhythm Visualizer",
+  "description": "A real-time music visualizer that captures audio, removes noise, and visualizes tune and rhythm.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
