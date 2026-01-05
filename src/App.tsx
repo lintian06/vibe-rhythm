@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Mic, MicOff, Activity, Music, AlertCircle } from 'lucide-react';
 import { useAudio } from './hooks/useAudio';
 import Visualizer from './components/Visualizer';
+import NoteVisualizer from './components/NoteVisualizer';
 
 function App() {
   const { isListening, error, startListening, stopListening, analyser } = useAudio();
@@ -27,9 +28,14 @@ function App() {
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-900/20 rounded-full blur-[120px]" />
       </div>
 
-      {/* Main Visualizer Layer */}
+      {/* Main Visualizer Layer (Rhythm/Tune) */}
       <div className="absolute inset-0 z-0">
         <Visualizer analyser={analyser} />
+      </div>
+
+      {/* Note Visualizer Layer (Violin Notes) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <NoteVisualizer analyser={analyser} />
       </div>
 
       {/* UI Overlay */}
