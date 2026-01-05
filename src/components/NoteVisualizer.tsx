@@ -98,8 +98,9 @@ const NoteVisualizer: React.FC<NoteVisualizerProps> = ({ analyser, className }) 
       flyingNotesRef.current = flyingNotesRef.current.filter(note => {
         const age = now - note.startTime;
         
-        // Pop after 1 seconds (1000ms)
-        if (age > 1000 && !note.popped) {
+        // Pop after 2 seconds (2000ms)
+        const totalTime = 2000;
+        if (age > totalTime && !note.popped) {
           note.popped = true;
           // Create sparks
           for (let i = 0; i < 8; i++) {
