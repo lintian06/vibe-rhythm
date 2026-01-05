@@ -57,7 +57,7 @@ function App() {
             </h1>
           </div>
           <p className="text-zinc-400 text-sm font-medium tracking-wide uppercase">
-            Real-time Audio Visualization
+            Real-time Music Visualization
           </p>
         </motion.header>
 
